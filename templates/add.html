@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Fill the form template</title>
 </head>
 <body>
-$END$
+<form method="POST" action="/add">
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author" placeholder="John Doe" required><br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" placeholder="My First Blog Post" required><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" placeholder="Write your post here"></textarea>
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
