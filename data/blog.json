@@ -1,4 +1,38 @@
 [
-    {"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."},
-    {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post."
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post."
+    },
+    {
+        "id": 3,
+        "author": "Gajanan",
+        "title": "Hiking in the Alps",
+        "content": "The scenery was beautiful and the air was so fresh\u2026"
+    },
+    {
+        "id": 4,
+        "author": "Gajanan",
+        "title": "Learning Flask",
+        "content": "I just started building my first web app with Flask. It feels great to see JSON data show up in a template!"
+    },
+    {
+        "id": 5,
+        "author": "Raj",
+        "title": "My Favorite Books",
+        "content": "I recently finished Atomic habits and it is very inspiring"
+    },
+    {
+        "id": 6,
+        "author": "Aarya",
+        "title": "Cooking pasta at home",
+        "content": "Tried making fresh pasta for the first time today! It was messy but so worth it."
+    }
 ]
