@@ -23,13 +23,23 @@
 <!-- Blog posts -->
 {% for post in posts %}
 <div class="post">
-    <h2>{{post.title}}</h2>
-    <p><em>{{post.author}}</em></p>
-    <p>{{post.content}}</p>
-    <form action="/delete/{{ post.id }}" method="POST" class="delete-form">
-        <button type="submit" class="deletebtn">Delete</button>
-    </form>
+    <div class="post-header">
+        <div class="post-title-author">
+            <h2>{{ post.title }}</h2>
+            <p><em>{{ post.author }}</em></p>
+        </div>
+        <div class="post-actions">
+            <form action="/delete/{{ post.id }}" method="POST">
+                <button type="submit" class="deletebtn">Delete</button>
+            </form>
+            <form action="/update/{{ post.id }}" method="GET">
+                <button type="submit" class="updatebtn">Update</button>
+            </form>
+        </div>
+    </div>
+    <p>{{ post.content }}</p>
 </div>
+
 {% endfor %}
 </body>
 </html>
