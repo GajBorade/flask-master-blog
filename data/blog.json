@@ -1,32 +1,86 @@
 [
     {
-        "id": 1,
-        "author": "John Doe",
-        "title": "First Post",
-        "content": "This is my first post."
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post. Sorry for deleting your first post\r\n"
     },
     {
         "id": 3,
-        "author": "Gajanan",
-        "title": "Hiking in the Alps",
-        "content": "The scenery was beautiful and the air was so fresh\u2026"
+        "author": "Radha Gaikwad",
+        "title": "Cooking Adventures",
+        "content": "I tried making veg Biryani today. It was delicious!"
     },
     {
         "id": 4,
-        "author": "Gajanan",
-        "title": "Learning Flask",
-        "content": "I just started building my first web app with Flask. It feels great to see JSON data show up in a template!"
+        "author": "Aarya",
+        "title": "Hiking in the Alps",
+        "content": "The views were breathtaking. Definitely worth the early wake-up!"
     },
     {
         "id": 5,
-        "author": "Raj",
-        "title": "My Favorite Books",
-        "content": "I recently finished Atomic habits and it is very inspiring"
+        "author": "Ole",
+        "title": "Weekend DIY Project",
+        "content": "Built a small bookshelf out of reclaimed wood. Loving the rustic vibe!"
     },
     {
         "id": 6,
-        "author": "Aarya",
-        "title": "Cooking pasta at home",
-        "content": "Tried making fresh pasta for the first time today! It was messy but so worth it."
+        "author": "Bhargavi",
+        "title": "Baking Challenge",
+        "content": "Attempted a triple-layer chocolate cake. It collapsed a bit, but tastes amazing!"
+    },
+    {
+        "id": 7,
+        "author": "Maya",
+        "title": "Gardening Joy",
+        "content": "Planted tomatoes and basil. Can\u2019t wait to make fresh pasta sauce soon."
+    },
+    {
+        "id": 8,
+        "author": "Gajanan",
+        "title": "Morning Run",
+        "content": "Ran 5 kilometers along the river. Feeling energized for the day!"
+    },
+    {
+        "id": 9,
+        "author": "Gauri",
+        "title": "Photography Fun",
+        "content": "Captured some amazing sunset shots today. Nature never disappoints."
+    },
+    {
+        "id": 10,
+        "author": "Rameshwar",
+        "title": "Sugarcane Harvest",
+        "content": "The yield is perfect makes me happy."
+    },
+    {
+        "id": 11,
+        "author": "Gajanan",
+        "title": "F\u00fcssen Trip",
+        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
+    },
+    {
+        "id": 12,
+        "author": "Gajanan",
+        "title": "Undecided",
+        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
+    },
+    {
+        "id": 13,
+        "author": "Anonymous",
+        "title": "Undecided",
+        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
+    },
+    {
+        "id": 14,
+        "author": "Gajanan",
+        "title": "F\u00fcssen",
+        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
+    },
+    {
+        "id": 15,
+        "author": "Anonymous",
+        "title": "Undecided",
+        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
     }
 ]
