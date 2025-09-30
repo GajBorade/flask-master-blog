@@ -93,7 +93,6 @@ form input[type="submit"]:hover {
 form.delete-form {
     display: inline-block;
     margin: 0;
-    align-self: flex-end;
 }
 
 /* flash messages*/
@@ -110,4 +109,45 @@ form.delete-form {
 }
 .flash-messages p {
     margin: 0;                   /* remove default paragraph margin */
+}
+
+/* update button inside posts */
+.updatebtn {
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.updatebtn:hover {
+    background-color: darkblue;
+}
+
+/* tiny inline form so button doesn’t stretch full width */
+form.update-form {
+    display: inline-block;
+    margin: 0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between; /* pushes title/author to left, buttons to right */
+    align-items: center; /* vertically aligns buttons with title/author */
+    margin-bottom: 10px;
+}
+
+.post-title-author h2 {
+    margin: 0;
+}
+
+.post-title-author p {
+    margin: 0;
+}
+
+.post-actions form {
+    display: inline-block;
+    margin-left: 5px; /* spacing between buttons */
 }
