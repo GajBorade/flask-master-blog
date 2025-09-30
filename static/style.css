@@ -16,6 +16,8 @@ h1 {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .post h2 {
@@ -70,4 +72,42 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+/* delete button inside posts */
+.deletebtn {
+    background-color: #e74c3c; /* red */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deletebtn:hover {
+    background-color: #c0392b; /* darker red */
+}
+
+/* tiny inline form so button doesn’t stretch full width */
+form.delete-form {
+    display: inline-block;
+    margin: 0;
+    align-self: flex-end;
+}
+
+/* flash messages*/
+
+.flash-messages {
+    background-color: #dff0d8;   /* light green for success */
+    color: #3c763d;              /* dark green text */
+    padding: 10px 15px;          /* some spacing inside */
+    border-radius: 4px;          /* rounded corners */
+    margin-bottom: 15px;         /* spacing below the message */
+    border: 1px solid #d6e9c6;   /* subtle border */
+    text-align: center;          /* center text */
+    font-weight: bold;
+}
+.flash-messages p {
+    margin: 0;                   /* remove default paragraph margin */
 }
