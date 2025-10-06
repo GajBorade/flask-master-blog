@@ -8,37 +8,51 @@ load_dotenv()
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 
+# Helper functions
+def read_posts():
+    """Read and return all blog posts from the JSON file."""
+    with open("data/blog.json", "r", encoding="utf-8") as file_object:
+        return json.load(file_object)
+
+
+def write_posts(posts):
+    """Write the list of posts back to the JSON file."""
+    with open("data/blog.json", "w", encoding="utf-8") as file_object:
+        json.dump(posts, file_object, indent=4)
+
+
 @app.route("/")
-def hello_world():
-    """Return a simple greeting message with hints for available routes."""
-    return "Hello, World! 🎉 Try visiting /index, /add," "/update, /delete"
-
-
-@app.route("/index")
 def index():
     """Load all blog posts from JSON file and render the index page."""
     # Fetch the job posts from a file
-    with open("data/blog.json", "r", encoding="utf-8") as file_object:
-        blog_posts = json.load(file_object)
-    print(blog_posts)  # list of dict
+    blog_posts = read_posts()
     return render_template("index.html", posts=blog_posts)
 
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
     """Handle adding a new blog post; supports form display (GET) and submission (POST)."""
-    with open("data/blog.json", "r", encoding="utf-8") as file_object:
-        blog_posts = json.load(file_object)
+    blog_posts = read_posts()
     if request.method == "POST":
-        author = request.form.get("author")
-        title = request.form.get("title")
-        content = request.form.get("content")
+        author = request.form.get("author", "").strip().title()
+        title = request.form.get("title", "").strip()
+        content = request.form.get("content", "").strip()
+        # apply defaults if empty and flash messages
+        if not title:
+            title = "Undecided"
+            flash("Default title applied: 'Undecided'", "info")
+        if not author:
+            author = "Anonymous"
+            flash("Default author applied: 'Anonymous'", "info")
+        if not content:
+            content = "Writers block"
+            flash("Default content applied: 'Writers block'", "info")
         new_id = max([p["id"] for p in blog_posts], default=0) + 1
         blog_posts.append(
             {"id": new_id, "author": author, "title": title, "content": content}
         )
-        with open("data/blog.json", "w", encoding="utf-8") as file_object:
-            json.dump(blog_posts, file_object, indent=4)
+        write_posts(blog_posts)
+        flash("New post added successfully!", "success")
         return redirect(url_for("index"))
     return render_template("add.html")
 
@@ -46,19 +60,17 @@ def add():
 @app.route("/delete/<int:post_id>", methods=["GET", "POST"])
 def delete(post_id):
     """Delete a blog post by its unique ID and flash a confirmation message."""
-    with open("data/blog.json", "r", encoding="utf-8") as file_object:
-        blog_posts = json.load(file_object)
-        # Filtering or rebuilding a list with exclusions
-        new_blog_posts = []
-        found = False # Flag to check if post exists
-        for old_post in blog_posts:
-            if old_post["id"] != post_id:
-                new_blog_posts.append(old_post)
-            else:
-                found = True
+    blog_posts = read_posts()
+    # Filtering or rebuilding a list with exclusions
+    new_blog_posts = []
+    found = False  # Flag to check if post exists
+    for old_post in blog_posts:
+        if old_post["id"] != post_id:
+            new_blog_posts.append(old_post)
+        else:
+            found = True
 
-    with open("data/blog.json", "w", encoding="utf-8") as file_object:
-        json.dump(new_blog_posts, file_object, indent=4)
+    write_posts(new_blog_posts)
 
     if found:
         flash("Post deleted successfully!", "success")
@@ -70,8 +82,7 @@ def delete(post_id):
 @app.route("/update/<int:post_id>", methods=["GET", "POST"])
 def update(post_id):
     """Update a blog post by its unique ID and flash a confirmation message."""
-    with open("data/blog.json", "r", encoding="utf-8") as file_object:
-        blog_posts = json.load(file_object)
+    blog_posts = read_posts()
     # fetch post by id
     post = None
     for p in blog_posts:
@@ -102,18 +113,13 @@ def update(post_id):
 
         new_id = max([p["id"] for p in blog_posts], default=0) + 1
 
-        # append new post with defaults applied
-        blog_posts.append({
-            "id": new_id,
-            "author": author,
-            "title": title,
-            "content": content
-        })
+        # update the existing post in place
+        post["title"] = title
+        post["author"] = author
+        post["content"] = content
 
         # Write back to JSON / Update JSON
-        with open("data/blog.json", "w", encoding="utf-8") as file_object:
-            json.dump(blog_posts, file_object, indent=4)
-
+        write_posts(blog_posts)
         # Flash update message
         flash("Post updated successfully!", "success")
         return redirect(url_for("index"))
