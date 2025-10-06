@@ -60,27 +60,21 @@
         "content": "Bayern is so beautiful, do visit the various castles and lakes there."
     },
     {
-        "id": 12,
-        "author": "Gajanan",
-        "title": "Undecided",
-        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
-    },
-    {
-        "id": 13,
-        "author": "Anonymous",
-        "title": "Undecided",
-        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
-    },
-    {
-        "id": 14,
-        "author": "Gajanan",
-        "title": "F\u00fcssen",
-        "content": "Bayern is so beautiful, do visit the various castles and lakes there."
-    },
-    {
         "id": 15,
         "author": "Anonymous",
-        "title": "Undecided",
+        "title": "Bayern travels",
         "content": "Bayern is so beautiful, do visit the various castles and lakes there."
+    },
+    {
+        "id": 16,
+        "author": "Krish",
+        "title": "Test",
+        "content": "Just testing some stuff, check flask messages"
+    },
+    {
+        "id": 17,
+        "author": "Gaj",
+        "title": "Check Flash messages",
+        "content": "Observe flash message after adding a post"
     }
 ]
