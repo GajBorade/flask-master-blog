@@ -11,8 +11,11 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 # Helper functions
 def read_posts():
     """Read and return all blog posts from the JSON file."""
-    with open("data/blog.json", "r", encoding="utf-8") as file_object:
-        return json.load(file_object)
+    try:
+        with open("data/blog.json", "r", encoding="utf-8") as file_object:
+            return json.load(file_object)
+    except (FileNotFoundError, json.decoder.JSONDecodeError):
+        return [] # return empty list if file is invalid or missing
 
 
 def write_posts(posts):
@@ -110,8 +113,6 @@ def update(post_id):
         if not content:
             content = "Writers block"
             flash("Default content applied: 'Writers block'", "info")
-
-        new_id = max([p["id"] for p in blog_posts], default=0) + 1
 
         # update the existing post in place
         post["title"] = title
