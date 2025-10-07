@@ -66,15 +66,15 @@
         "content": "Bayern is so beautiful, do visit the various castles and lakes there."
     },
     {
-        "id": 16,
-        "author": "Krish",
-        "title": "Test",
-        "content": "Just testing some stuff, check flask messages"
-    },
-    {
         "id": 17,
         "author": "Gaj",
         "title": "Check Flash messages",
         "content": "Observe flash message after adding a post"
+    },
+    {
+        "id": 18,
+        "author": "Charles Dickens",
+        "title": "A Christmas Carol",
+        "content": "Ebenezer Scrooge lives in all of us. All throughout the year. This Christmas let us spread joy."
     }
 ]
